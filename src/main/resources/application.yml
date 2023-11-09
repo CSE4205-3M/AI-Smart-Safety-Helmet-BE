@@ -1,0 +1,31 @@
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://165.246.44.237:8080/3M-BE
+    password: '7381'
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: 'true'
+    defer-datasource-initialization: 'true'
+    show-sql: 'true'
+
+
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: 'true'
+    pathmatch:
+      matching-strategy: ant_path_matcher
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: 'false'
+server:
+  port: 11108
