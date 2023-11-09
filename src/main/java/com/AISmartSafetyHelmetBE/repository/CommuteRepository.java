@@ -1,6 +1,6 @@
 package com.AISmartSafetyHelmetBE.repository;
 
-import com.AISmartSafetyHelmetBE.dto.Commute;
+import com.AISmartSafetyHelmetBE.entity.Commute;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

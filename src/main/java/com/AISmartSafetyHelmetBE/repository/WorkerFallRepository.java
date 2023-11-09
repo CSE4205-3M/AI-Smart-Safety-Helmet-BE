@@ -1,6 +1,6 @@
 package com.AISmartSafetyHelmetBE.repository;
 
-import com.AISmartSafetyHelmetBE.dto.WorkerFall;
+import com.AISmartSafetyHelmetBE.entity.WorkerFall;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

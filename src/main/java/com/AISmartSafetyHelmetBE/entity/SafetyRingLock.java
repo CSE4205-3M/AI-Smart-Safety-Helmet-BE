@@ -1,8 +1,7 @@
-package com.AISmartSafetyHelmetBE.dto;
+package com.AISmartSafetyHelmetBE.entity;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -14,20 +13,27 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Table(name = "commute")
-public class Commute {
+@Table(name = "safety_ring_lock")
+public class SafetyRingLock {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name="uuid2", strategy = "uuid2")
-    @Column(name = "commute_id")
-    private UUID commute_id;
+    @Column(name = "accident_id")
+    private UUID accident_id;
 
     @ManyToOne
     @JoinColumn(name="worker_id")
     private Worker worker;
 
-    @Column(name = "date")
-    private String date;
+    @Column(name = "timestamp")
+    private String timestamp;
 
-    private int status;
+    @Column(name = "latitude")
+    private float latitude;
+
+    @Column(name="longitude")
+    private float longitude;
+
+    @Column(name="zone")
+    private char zone;
 }

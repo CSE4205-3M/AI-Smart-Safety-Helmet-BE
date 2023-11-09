@@ -1,9 +1,7 @@
-package com.AISmartSafetyHelmetBE.dto;
+package com.AISmartSafetyHelmetBE.entity;
 
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.util.UUID;
