@@ -18,7 +18,7 @@ public class SafetyLingLockController {
     @Autowired
     private SafetyLingLockService safetyLingLockService;
 
-    @Operation(description = "근로자의 출근 여부 데이터 전송")
+    @Operation(description = "안전 고리 체결 사고 데이터 전송")
     @PostMapping("/accident/safetyRing-unlocked")
     public ResponseEntity<Boolean> addAccident(@RequestBody SafetyLingLockRequestDto dto) {
 
