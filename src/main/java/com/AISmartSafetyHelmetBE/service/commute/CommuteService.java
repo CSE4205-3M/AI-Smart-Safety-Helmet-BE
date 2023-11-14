@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -24,6 +26,8 @@ public class CommuteService {
     @Autowired
     private WorkerRepository workerRepository;
     public Boolean addCommute(CommuteRequestDto dto) {
+        //UUID id = UUID.fromString();
+        System.out.println("ras: " + dto.getRaspberryPiId().getClass().getName());
         Worker worker = workerRepository.findByRaspberryPiId(dto.getRaspberryPiId());
         Commute commute = dto.toEntity(worker);
         commuteRepository.save(commute);

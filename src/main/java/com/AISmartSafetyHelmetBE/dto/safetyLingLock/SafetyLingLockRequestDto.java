@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class SafetyLingLockRequestDto {
-    private UUID raspberryPiId;
+    private String raspberryPiId;
     private float latitude;
     private float longitude;
     private char zone;

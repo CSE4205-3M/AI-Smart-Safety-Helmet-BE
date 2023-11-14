@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class CommuteRequestDto {
-    private UUID raspberryPiId;
+    private String raspberryPiId;
     private int status;
 
     public Commute toEntity(Worker worker) {
