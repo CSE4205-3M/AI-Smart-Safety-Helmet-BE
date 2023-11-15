@@ -1,9 +1,9 @@
-package com.AISmartSafetyHelmetBE.service.workerFall;
+package com.AISmartSafetyHelmetBE.service.workerAccident;
 
-import com.AISmartSafetyHelmetBE.dto.workerFall.WorkerFallRequestDto;
+import com.AISmartSafetyHelmetBE.dto.workerAccident.WorkerAccidentRequestDto;
 import com.AISmartSafetyHelmetBE.entity.Worker;
-import com.AISmartSafetyHelmetBE.entity.WorkerFall;
-import com.AISmartSafetyHelmetBE.repository.WorkerFallRepository;
+import com.AISmartSafetyHelmetBE.entity.WorkerAccident;
+import com.AISmartSafetyHelmetBE.repository.WorkerAccidentRepository;
 import com.AISmartSafetyHelmetBE.repository.WorkerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,23 +11,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.UUID;
-
 @Service
 @RequiredArgsConstructor
 @Transactional
 @Slf4j
-public class WorkerFallService {
+public class WorkerAccidentService {
 
     @Autowired
-    private WorkerFallRepository workerFallRepository;
+    private WorkerAccidentRepository workerAccidentRepository;
 
     @Autowired
     private WorkerRepository workerRepository;
-    public Boolean addAccident(WorkerFallRequestDto dto) {
+    public Boolean addAccident(WorkerAccidentRequestDto dto) {
         Worker worker = workerRepository.findByRaspberryPiId(dto.getRaspberryPiId());
-        WorkerFall workerFall = dto.toEntity(worker);
-        workerFallRepository.save(workerFall);
+        WorkerAccident workerAccident = dto.toEntity(worker);
+        workerAccidentRepository.save(workerAccident);
         return true;
     }
 }
