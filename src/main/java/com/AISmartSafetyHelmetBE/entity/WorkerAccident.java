@@ -13,7 +13,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Table(name = "worker_fall")
+@Table(name = "worker_Accident")
 public class WorkerAccident {
     @Id
     @GeneratedValue(generator = "uuid2")
