@@ -1,7 +1,7 @@
-package com.AISmartSafetyHelmetBE.controller.workerFall;
+package com.AISmartSafetyHelmetBE.controller.workerAccident;
 
-import com.AISmartSafetyHelmetBE.dto.workerFall.WorkerFallRequestDto;
-import com.AISmartSafetyHelmetBE.service.workerFall.WorkerFallService;
+import com.AISmartSafetyHelmetBE.dto.workerAccident.WorkerAccidentRequestDto;
+import com.AISmartSafetyHelmetBE.service.workerAccident.WorkerAccidentService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-public class WorkerFallController {
+public class WorkerAccidentController {
 
     @Autowired
-    private WorkerFallService workerFallService;
+    private WorkerAccidentService workerAccidentService;
 
     @Operation(description = "근로자의 쓰러짐 감지 데이터 전송")
     @PostMapping("/accident/workerFall")
-    public ResponseEntity<Boolean> addAccident(@RequestBody WorkerFallRequestDto dto) {
-        return ResponseEntity.status(HttpStatus.OK).body(workerFallService.addAccident(dto));
+    public ResponseEntity<Boolean> addAccident(@RequestBody WorkerAccidentRequestDto dto) {
+        return ResponseEntity.status(HttpStatus.OK).body(workerAccidentService.addAccident(dto));
     }
 }

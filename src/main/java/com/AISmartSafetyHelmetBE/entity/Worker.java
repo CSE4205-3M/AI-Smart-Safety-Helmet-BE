@@ -39,3 +39,5 @@ public class Worker {
     @Column(name = "health_issue")
     private String healthIssue;
 }
+
+
