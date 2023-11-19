@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Entity
@@ -26,7 +27,7 @@ public class WorkerAccident {
     private Worker worker;
 
     @Column(name = "timestamp")
-    private String timestamp;
+    private Timestamp timestamp;
 
     @Column(name = "latitude")
     private float latitude;
@@ -34,8 +35,11 @@ public class WorkerAccident {
     @Column(name="longitude")
     private float longitude;
 
-    @Column(name="zone")
-    private char zone;
+    @Column(name="value")
+    private int value;
+
+    @Column(name="time_sec")
+    private long time_sec;
 
     @Column(name="description")
     private String description;
