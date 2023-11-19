@@ -35,8 +35,8 @@ public class WorkerAccident {
     @Column(name="longitude")
     private float longitude;
 
-    @Column(name="zone")
-    private int zone;
+    @Column(name="value")
+    private int value;
 
     @Column(name="time_sec")
     private long time_sec;

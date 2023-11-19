@@ -17,7 +17,7 @@ public class WorkerAccidentRequestDto {
     private String raspberryPiId;
     private float latitude;
     private float longitude;
-    private int zone;
+    private int value;
     private String description;
 
     public WorkerAccident toEntity(Worker worker) {
@@ -26,7 +26,7 @@ public class WorkerAccidentRequestDto {
                 .worker(worker)
                 .latitude(latitude)
                 .longitude(longitude)
-                .zone(zone)
+                .value(value)
                 .timestamp(Timestamp.valueOf(sdf.format(new Timestamp(System.currentTimeMillis()))))
                 .time_sec(System.currentTimeMillis())
                 .description(description)

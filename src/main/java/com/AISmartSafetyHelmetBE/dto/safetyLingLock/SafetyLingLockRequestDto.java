@@ -4,6 +4,8 @@ import com.AISmartSafetyHelmetBE.entity.SafetyRingLock;
 import com.AISmartSafetyHelmetBE.entity.Worker;
 import lombok.*;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
@@ -19,12 +21,14 @@ public class SafetyLingLockRequestDto {
     private char zone;
 
     public SafetyRingLock toEntity(Worker worker) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         SafetyRingLock safetyRingLock = SafetyRingLock.builder()
                 .worker(worker)
                 .latitude(latitude)
                 .longitude(longitude)
                 .zone(zone)
-                .timestamp(LocalDateTime.now().format(DateTimeFormatter.ofPattern(("yyyy-MM-dd HH:mm:ss"))))
+                .time_sec(System.currentTimeMillis())
+                .timestamp(Timestamp.valueOf(sdf.format(new Timestamp(System.currentTimeMillis()))))
                 .build();
         return safetyRingLock;
     }
