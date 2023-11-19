@@ -15,7 +15,7 @@ public class SafetyRingLockRequestDto {
     private String raspberryPiId;
     private float latitude;
     private float longitude;
-    private int check;
+    private int status;
     private int zone;
 
     public SafetyRingLock toEntity(Worker worker) {
@@ -26,7 +26,7 @@ public class SafetyRingLockRequestDto {
                 .longitude(longitude)
                 .zone(zone)
                 .time_sec(System.currentTimeMillis())
-                .check(check)
+                .status(status)
                 .tmp("tmp")
                 .timestamp(Timestamp.valueOf(sdf.format(new Timestamp(System.currentTimeMillis()))))
                 .build();

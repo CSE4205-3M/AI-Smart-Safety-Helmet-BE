@@ -41,8 +41,8 @@ public class SafetyRingLock {
     @Column(name="zone")
     private int zone;
 
-    @Column(name="check")
-    private int check;
+    @Column(name="status")
+    private int status;
 
     @Column(name = "tmp")
     private String tmp;
