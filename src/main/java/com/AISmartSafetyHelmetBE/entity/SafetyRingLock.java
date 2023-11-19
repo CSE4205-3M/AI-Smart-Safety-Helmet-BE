@@ -38,12 +38,9 @@ public class SafetyRingLock {
     @Column(name="time_sec")
     private long time_sec;
 
-    @Column(name="zone")
-    private int zone;
+    @Column(name="value")
+    private int value;
 
-    @Column(name="status")
-    private int status;
-
-    @Column(name = "tmp")
-    private String tmp;
+    @Column(name = "metric")
+    private String metric;
 }
