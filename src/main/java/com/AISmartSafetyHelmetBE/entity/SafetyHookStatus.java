@@ -14,8 +14,8 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Table(name = "safety_ring_lock")
-public class SafetyRingLock {
+@Table(name = "safety_hook_status")
+public class SafetyHookStatus {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name="uuid2", strategy = "uuid2")
@@ -40,4 +40,10 @@ public class SafetyRingLock {
 
     @Column(name="zone")
     private int zone;
+
+    @Column(name="check")
+    private int check;
+
+    @Column(name = "tmp")
+    private String tmp;
 }
