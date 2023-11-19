@@ -1,6 +1,6 @@
-package com.AISmartSafetyHelmetBE.dto.SafetyHookStatus;
+package com.AISmartSafetyHelmetBE.dto.SafetyRingLock;
 
-import com.AISmartSafetyHelmetBE.entity.SafetyHookStatus;
+import com.AISmartSafetyHelmetBE.entity.SafetyRingLock;
 import com.AISmartSafetyHelmetBE.entity.Worker;
 import lombok.*;
 
@@ -11,16 +11,16 @@ import java.text.SimpleDateFormat;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
-public class SafetyHookStatusRequestDto {
+public class SafetyRingLockRequestDto {
     private String raspberryPiId;
     private float latitude;
     private float longitude;
     private int check;
     private char zone;
 
-    public SafetyHookStatus toEntity(Worker worker) {
+    public SafetyRingLock toEntity(Worker worker) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        SafetyHookStatus safetyHookStatus = SafetyHookStatus.builder()
+        SafetyRingLock safetyRingLock = SafetyRingLock.builder()
                 .worker(worker)
                 .latitude(latitude)
                 .longitude(longitude)
@@ -30,6 +30,6 @@ public class SafetyHookStatusRequestDto {
                 .tmp("tmp")
                 .timestamp(Timestamp.valueOf(sdf.format(new Timestamp(System.currentTimeMillis()))))
                 .build();
-        return safetyHookStatus;
+        return safetyRingLock;
     }
 }
