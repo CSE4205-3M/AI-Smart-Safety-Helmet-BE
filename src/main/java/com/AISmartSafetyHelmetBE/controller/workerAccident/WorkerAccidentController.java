@@ -18,8 +18,8 @@ public class WorkerAccidentController {
     @Autowired
     private WorkerAccidentService workerAccidentService;
 
-    @Operation(description = "근로자의 쓰러짐 감지 데이터 전송")
-    @PostMapping("/accident/workerFall")
+    @Operation(description = "근로자의 사고 데이터 전송")
+    @PostMapping("/accident/workerAccident")
     public ResponseEntity<Boolean> addAccident(@RequestBody WorkerAccidentRequestDto dto) {
         return ResponseEntity.status(HttpStatus.OK).body(workerAccidentService.addAccident(dto));
     }
