@@ -16,7 +16,7 @@ public class SafetyRingLockRequestDto {
     private float latitude;
     private float longitude;
     private int check;
-    private char zone;
+    private int zone;
 
     public SafetyRingLock toEntity(Worker worker) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
